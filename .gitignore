@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+contact-notes-frontend/node_modules/
+
+# Build folders
+dist/
+contact-notes-frontend/build/
+
+# Coverage reports
+coverage/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local logs
+*.log

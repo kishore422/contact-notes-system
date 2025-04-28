@@ -1,0 +1,32 @@
+## Build a Backend Service for a Contact Notes System
+	
+You're building an internal service for managing contact notes:
+Create a backend service that:
+	1 - Authenticates via a JWT-based auth flow ✅ 
+		authController.ts → login creates JWT; auth.ts → middleware protects routes
+	2 - Supports full CRUD operations ( contactRoutes.ts, noteRoutes.ts, and controllers for full Create, Read, Update, Delete ) ✅
+		Contacts CRUD - /api/contacts/ (GET, POST), /api/contacts/:id (GET, PUT, DELETE)
+		Notes attached to contacts CRUD - /api/notes/ (GET, POST), /api/notes/:id (GET, PUT, DELETE)
+	3 - Exposes a REST API for resources ✅ 
+		All routes properly RESTful (resource URI + correct methods GET, POST, PUT, DELETE)
+	4 - Implements field normalization for inbound note data ✅
+		fieldNormalizer.ts middleware normalizes note_body or note_text to body field before save
+ 	
+Write Setup & Explanation Docs: ✅
+ 	1 - Explain how to run your service locally - README.md ✅
+		Check Project Main folder and Documentation Folder
+ 	2 - Outline key decisions, tradeoffs, and assumptions - DESIGN.md ✅
+		Check Project Main folder and Documentation Folder
+	3 - Share what you'd improve or add with more time - IMPROVEMENTS.md ✅
+		Check Project Main folder and Documentation Folder
+
+Bonus (Optional)
+ 	1 - Write API documentation for your service ✅
+		Check Documentation Folder
+ 	2 - Add unit or integration tests ✅
+		auth.test.ts | Test login API (authentication)
+		contact.test.ts | Test CRUD APIs for contacts
+		note.test.ts | Test CRUD APIs for notes
+ 	3 - Use a queue or event bus to decouple note creation from indexing or processing (e.g., triggering downstream analytics or enrichment jobs) ✅
+		/src/queues/noteQueue.ts | Setup Bull queue (noteQueue) with Redis
+		/src/queues/noteProcessor.ts | Worker file that processes jobs from noteQueue
